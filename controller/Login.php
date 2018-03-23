@@ -5,7 +5,6 @@ class Login
 {
     public function login()
     {
-        $login = new Login();
         if (isset($_POST["Submit"]) && $_POST["Submit"] == "登录") {
             $user = $_POST["username"];
             $psw = $_POST["passwd"];

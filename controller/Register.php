@@ -10,7 +10,8 @@ class Register
             $psw = $_POST["passwd"];
             $psw_confirm = $_POST["repasswd"];
             if ($user == "" || $psw == "" || $psw_confirm == "") {
-                echo "<script>alert('请确认信息完整性！');</script>";
+                echo "<script>alert('请确认信息完整性！');history.go(-1);</script>";
+                require '../view/Register.html';
             } else {
                 if ($psw == $psw_confirm) {
                     /*对数据库的操作*/
@@ -23,7 +24,7 @@ class Register
                     if ($num)    //如果已经存在该用户
                     {
                         echo "<script>alert('用户名已存在');</script>";
-                        echo "<script></script>>";
+                        echo "<script></script>";
                         include '../view/Register.html';
                     } else    //不存在当前注册用户名称
                     {
